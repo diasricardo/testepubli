@@ -34,7 +34,7 @@ def cadastro():
         # Verificar se os campos estão preenchidos
         if not nome or not email or not senha:
             flash("Todos os campos são obrigatórios!", "error")
-            return redirect('/cadastro')
+            return redirect('/index')
 
         # Inserir no banco de dados
         conexao = criar_conexao()
