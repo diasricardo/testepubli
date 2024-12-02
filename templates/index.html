@@ -9,7 +9,8 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Cadastro de Usuários</h1>
-        <form method="POST" action="/index" class="mt-4">
+        <form method="POST" action="/index" enctype="multipart/form-data" class="mt-4">
+            <!-- Exibição de mensagens flash -->
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <div>
@@ -21,20 +22,35 @@
                 </div>
             {% endif %}
             {% endwith %}
+
+            <!-- Campo Nome -->
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
+
+            <!-- Campo Email -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
+
+            <!-- Campo Senha -->
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha</label>
                 <input type="password" class="form-control" id="senha" name="senha" required>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+            <!-- Campo Imagem -->
+            <div class="mb-3">
+                <label for="imagem" class="form-label">Foto de Perfil</label>
+                <input type="file" class="form-control" id="imagem" name="imagem" accept="image/*" required>
+            </div>
+
+            <!-- Botão de Cadastro -->
+            <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
         </form>
     </div>
 </body>
 </html>
+
